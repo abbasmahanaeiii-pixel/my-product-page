@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Product Info Card</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; background: #f0f4f8; }
+    .container { max-width: 800px; margin: 40px auto; background: #fff; border-radius: 15px; padding: 30px; box-shadow: 0 10px 25px rgba(0,0,0,0.15); }
+    h1 { text-align: center; color: #1e3a8a; margin-bottom: 25px; }
+    table { width: 100%; border-collapse: collapse; margin-bottom: 30px; }
+    th, td { padding: 12px; text-align: center; border: 1px solid #cbd5e1; }
+    th { background-color: #1e40af; color: #fff; }
+    .image-section, .library, .qr { text-align: center; margin-bottom: 30px; }
+    .image-section img { max-width: 250px; border-radius: 10px; border: 2px solid #1e40af; background: #e0ebf8; }
+    .library table th { background-color: #2563eb; }
+    .library table td { background-color: #f3f4f6; }
+    .qr img { margin-top: 10px; }
+    p { color: #1e3a8a; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Product Info Card</h1>
+
+    <table>
+        <tr>
+            <th>MESC Code</th>
+            <th>Unit</th>
+            <th>Quantity</th>
+            <th>Part No</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td>3023134763</td>
+            <td>pcs</td>
+            <td>10</td>
+            <td>IMP-SD40</td>
+            <td>Impeller SD40 for Ebara Pump</td>
+        </tr>
+    </table>
+
+    <div class="image-section">
+        <h2>Product Image</h2>
+        <!-- ???? ????? ????? ?? ?? src ???? ???? -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Water_pump_impeller.jpg" alt="Impeller Image">
+        <p>Professional impeller representation</p>
+    </div>
+
+    <div class="library">
+        <h2>Library / Classification</h2>
+        <table>
+            <tr><th>Category</th><th>Type</th></tr>
+            <tr><td>Pump</td><td>Ebara</td></tr>
+            <tr><td>Spare Part</td><td>Impeller</td></tr>
+        </table>
+    </div>
+
+    <div class="qr">
+        <h2>QR Code</h2>
+        <img id="qrcode" alt="QR Code">
+        <p>Scan to open this page</p>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+    new QRCode(document.getElementById("qrcode"), {
+        text: window.location.href,
+        width: 180,
+        height: 180,
+        colorDark : "#1e3a8a",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+    });
+</script>
+</body>
+</html>
